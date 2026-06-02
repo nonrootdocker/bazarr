@@ -1,16 +1,16 @@
 {
   "nodes": {
-    "jackett-src": {
+    "bazarr-src": {
       "flake": false,
       "locked": {
-        "lastModified": 1780268406,
-        "narHash": "sha256-UN2rlFMht7T60srjx8KPB3zy3Qc1HxGUsQv/fzLhIVs=",
+        "lastModified": 1772105588,
+        "narHash": "sha256-S3idNH9Wm9f6aNj69dERmeks1rLvUeQJYFebXa5cWQo=",
         "type": "tarball",
-        "url": "https://github.com/Jackett/Jackett/releases/latest/download/Jackett.Binaries.LinuxAMDx64.tar.gz"
+        "url": "https://github.com/morpheus65535/bazarr/releases/latest/download/bazarr.zip"
       },
       "original": {
         "type": "tarball",
-        "url": "https://github.com/Jackett/Jackett/releases/latest/download/Jackett.Binaries.LinuxAMDx64.tar.gz"
+        "url": "https://github.com/morpheus65535/bazarr/releases/latest/download/bazarr.zip"
       }
     },
     "minimalbase": {
@@ -48,7 +48,7 @@
     },
     "root": {
       "inputs": {
-        "jackett-src": "jackett-src",
+        "bazarr-src": "bazarr-src",
         "minimalbase": "minimalbase",
         "nixpkgs": [
           "minimalbase",
