@@ -1,9 +1,9 @@
 {
-  description = "minimalbase-ng + bazarr service";
+  description = "minimalbase + bazarr service";
 
   inputs = {
     nixpkgs.follows = "minimalbase/nixpkgs";
-    minimalbase.url = "github:nonrootdocker/minimalbase-ng";
+    minimalbase.url = "github:nonrootdocker/minimalbase";
     bazarr-src = {
       url = "https://github.com/morpheus65535/bazarr/releases/latest/download/bazarr.zip";
       flake = false;
@@ -90,7 +90,7 @@
     packages.${system} = {
       default = self.packages.${system}.bazarr-image;
       bazarr-image = pkgs.dockerTools.buildImage {
-        name = "minimalbase-ng";
+        name = "minimalbase";
         tag = "latest";
         fromImage = minimalbase.packages.${system}.base-image;
 
