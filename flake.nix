@@ -42,7 +42,7 @@
 
     bazarr = pkgs.stdenv.mkDerivation {
       pname = "bazarr";
-      version = "latest";
+      version = "release";
       src = bazarr-src;
 
       buildInputs = [ bazarrPython ];
@@ -56,6 +56,13 @@
         cp -r $src/. $out/app/bazarr/
       '';
     };
+    # ----------------------------
+    # Bazarr version: top-level VERSION file (e.g. "v1.5.6"); strip the
+    # leading 'v' for a numeric tag. Exposed as `version` for CI tagging.
+    # ----------------------------
+    bazarrVersion = pkgs.runCommand "bazarr-version" { } ''
+      sed 's/^v//' ${bazarr}/app/bazarr/VERSION | tr -d '\n' > $out
+    '';
 
     # ----------------------------
     # User database configuration (/etc/passwd)
@@ -89,8 +96,9 @@
   in {
     packages.${system} = {
       default = self.packages.${system}.bazarr-image;
+      version = bazarrVersion;
       bazarr-image = pkgs.dockerTools.buildImage {
-        name = "minimalbase";
+        name = "bazarr";
         tag = "latest";
         fromImage = minimalbase.packages.${system}.base-image;
 
