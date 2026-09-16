@@ -3,8 +3,8 @@
     "bazarr-src": {
       "flake": false,
       "locked": {
-        "lastModified": 1783169010,
-        "narHash": "sha256-LRcc2wg5u260yl3A7rRwBfldl6WOyvF2T9NKGTKabfw=",
+        "lastModified": 1789434181,
+        "narHash": "sha256-ewmCZObVl9fl0NPaKqhi+gKAFpRrWMEsXHFeTgTnxQY=",
         "type": "tarball",
         "url": "https://github.com/morpheus65535/bazarr/releases/latest/download/bazarr.zip"
       },
